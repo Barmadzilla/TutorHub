@@ -1,0 +1,13 @@
+:root {
+  --text: #333333;
+  --text-light: #9c9c9c;
+  --main-blue: #396eac;
+  --main-pink: #EF5DA8;
+  --bg-first: #d4eafe;
+  --bg-second: #fed4f2;
+  --bg-second-transparent: rgba(254, 212, 242, 0.22);
+  --bg-third: #d4dffe;
+  --light-gray: #fff6fc;
+  --theme-color: var(--bg-first);
+  --theme-text-color:var(--main-blue);
+}
