@@ -1,8 +1,10 @@
 <template>
-  <div class="card" :data-bg="n">
-    <h2>{{ title }}</h2>
-    <p>{{ desc }}</p>
-  </div>
+  <nuxt-link :to="to">
+    <div class="card" :data-bg="n">
+      <h2>{{ title }}</h2>
+      <p>{{ desc }}</p>
+    </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -20,12 +22,20 @@ export default {
     n: {
       type: Number,
       default: 0
+    },
+    to: {
+      type: String,
+      default: '#'
     }
   }
 }
 </script>
 
 <style scoped>
+a{
+  text-decoration: none;
+  color: unset;
+}
 .card {
   background: lightblue;
   border-radius: 2em;

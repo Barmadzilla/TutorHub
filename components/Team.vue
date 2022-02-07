@@ -54,13 +54,19 @@ export default {
 </script>
 
 <style>
-.scroll{
-    overflow: auto;
+.scroll {
+  overflow-x: auto;
+  position: relative;
+  /* scroll-padding-left: 5rem; */
+  /* scroll-margin: 50px 0 0 50px; */
+  /* scroll-padding-block: 50em; */
 }
 .team {
   display: flex;
   width: max-content;
   grid-area: 3em;
   align-items: flex-start;
+  scroll-padding-block: 50em;
+  scroll-snap-type: both mandatory;
 }
 </style>

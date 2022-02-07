@@ -1,9 +1,16 @@
 <template>
   <div :style="designColor">
-    <page-header :title="title" :nav="nav" />
+    <page-header :title="title" :nav="nav" :action="{ to:'#form', name: 'Заполнить анкету' }" />
     <info-block-img :id="content[0].link" :data="content[0]" />
-    <info-block-icons :id="content[1].link" :data="content[1]" position="right" />
+    <info-block-icons
+      :id="content[1].link"
+      :data="content[1]"
+      position="right"
+    />
     <info-block :id="content[2].link" :data="content[2]" />
+    <accordion-block :id="content[3]" :data="content[3]" />
+    <road-map :id="content[4].link" :data="content[4]" />
+    <tutor-form />
   </div>
 </template>
 
@@ -12,10 +19,21 @@ import PageHeader from '~/components/PageHeader.vue'
 import InfoBlock from '~/components/InfoBlock.vue'
 import InfoBlockImg from '~/components/InfoBlockImg.vue'
 import InfoBlockIcons from '~/components/InfoBlockIcons.vue'
+import RoadMap from '~/components/RoadMap.vue'
+import AccordionBlock from '~/components/AccordionBlock.vue'
+import TutorForm from '~/components/Forms/TutorForm.vue'
 
 export default {
   name: 'EducationPage',
-  components: { PageHeader, InfoBlock, InfoBlockImg, InfoBlockIcons },
+  components: {
+    PageHeader,
+    InfoBlock,
+    InfoBlockImg,
+    InfoBlockIcons,
+    RoadMap,
+    AccordionBlock,
+    TutorForm
+  },
   data () {
     return {
       designColor: {
@@ -46,18 +64,77 @@ export default {
             'Инклюзивное образование появилось в мире в 1960-х годах, но в России до сих пор спорят: работает — не работает, хорошо — плохо. Многие люди сомневаются в том, что у «особых» детей и взрослых могут быть те же потребности, что и у всех остальных — потребность в общении, дружбе, учебе в школе, в занятости и самореализации. Но даже те, кто знаком с проблемой, убеждены: нормотипичные дети, их родители, воспитатели и учителя не готовы находиться рядом с «особыми» детьми в обычных детских садах и школах.',
             'На самом деле это уже не так. Наша практика подтверждает другое. Если «обычные» дети не накручены страхами взрослых, то они легко общаются с «особыми» детьми. Многие взрослые тоже готовы взаимодействовать с «особенными» детьми, иногда нужно только им немного помочь.'
           ]
+        },
+        {
+          title: 'Хотим поделиться с вами некоторыми тонкостями включения:',
+          content: [
+            {
+              title: 'Когда никто не исключен',
+              desc: 'Когда никто не исключен, все дети, независимо от способностей и особенностей, могут ладить между собой',
+              img: 'photo_01.jpg'
+            },
+            {
+              title: 'Дошкольный возраст',
+              desc: 'Дошкольный возраст – лучшее время для восприятия детьми особенностей других; в этом возрасте стираются границы в общении детей друг с другом.',
+              img: 'photo_02.jpg'
+            },
+            {
+              title: 'Самые результативные занятия ',
+              desc: 'Самые результативные занятия с лучшими специалистами не могут заменить детям полноценного общения со сверстниками, нормальная детская жизнь терапевтична сама по себе',
+              img: 'photo_03.jpg'
+            },
+            {
+              title: 'Общение и игра',
+              desc: 'Общение и игра с «особыми» детьми помогают «обычным» детям стать добрее, улучшить собственные навыки общения и игры, научиться заботиться о других людях.',
+              img: 'photo_04.jpg'
+            },
+            {
+              title: 'Включение особых детей',
+              desc: 'Включение особых детей - это ситуация выигрыша обеих сторон, стратегия win-win («победа-победа»), нет каких-либо жертв или потерь со стороны «обычных» детей, только приобретения.',
+              img: 'photo_05.jpg'
+            },
+            {
+              title: 'Инклюзивные подходы',
+              desc: 'Инклюзивные подходы помогают нормализовать не только жизнь детей, но и родителей. Счастливые родители - путь к счастливым детям.',
+              img: 'photo_06.jpg'
+            },
+            {
+              title: 'Трудные вопросы и ситуации',
+              desc: 'Трудные вопросы и ситуации случаются у всех родителей, обычные дети имеют характеры и особенности, сотрудники могут болеть и уставать. А инклюзивная среда дружественна, поддерживает и питает всех, особых и обычных, детей и взрослых, родителей и сотрудников.',
+              img: 'photo_07.jpg'
+            },
+            {
+              title: 'Методики и практики инклюзии',
+              desc: 'Методики и практики инклюзии применимы в обычных группах детских садов и в школьных классах.',
+              img: 'photo_08.jpg'
+            }
+          ]
+        },
+        {
+          link: 'roadmap',
+          title: 'Что нужно, чтобы стать тьютором?',
+          content: [
+            // 'Зайти на портал ТьюторХаб',
+            'Заполнить анкету',
+            'Пройти наш курс в групповом или индивидуальном порядке',
+            'Познакомиться с ребенком, семьей, учреждением',
+            'Начать сопровождать ребенка в учреждении',
+            'Посещать группы супервизии для тьюторов'
+          ]
         }
       ]
     }
   },
   computed: {
     nav () {
-      return this.content.map((item) => {
-        return {
-          title: item.title,
-          link: item.link
-        }
-      })
+      return this.content
+        .filter(item => item.link)
+        .map((item) => {
+          return {
+            title: item.title,
+            link: item.link
+          }
+        })
     }
   }
 }

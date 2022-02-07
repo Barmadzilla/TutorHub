@@ -20,7 +20,8 @@ export default {
         { name: 'О нас', to: 'about' },
         { name: 'Работа', to: 'work' },
         { name: 'Обучение', to: 'education' },
-        { name: 'Контакты', to: 'contacts' }
+        { name: 'Тьютору', to: 'supervision' }
+        // { name: 'Контакты', to: 'contacts' }
       ]
     }
   }
@@ -44,7 +45,9 @@ nav {
   /* margin-left: 2em; */
   transition: all 150ms;
 }
-.item:hover {
-  color: var(--main-blue);
+.item:hover,
+.item.active-link {
+  color: var(--theme-text-color);
+
 }
 </style>

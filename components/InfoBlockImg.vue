@@ -1,13 +1,18 @@
 <template>
   <content-section>
-    <div class="content">
+    <div :class="['content', position]">
+      <div v-if="position" class="images">
+        <card-icon icon="0" class="icon" />
+        <card-icon icon="1" class="icon" />
+        <card-icon icon="4" class="icon" />
+      </div>
       <div class="info">
         <h2>{{ data.title }}</h2>
         <p v-for="(p, i) in data.content" :key="i">
           {{ p }}
         </p>
       </div>
-      <div class="images">
+      <div v-if="!position" class="images">
         <card-icon icon="0" class="icon" />
         <card-icon icon="1" class="icon" />
         <card-icon icon="4" class="icon" />
@@ -26,6 +31,10 @@ export default {
   props: {
     data: {
       type: Object,
+      default: null
+    },
+    position: {
+      type: String,
       default: null
     }
   },
@@ -58,5 +67,11 @@ export default {
 }
 .icon:nth-child(even){
   align-self: flex-end;
+}
+.content.right {
+  grid-template-columns: 2fr 5fr;
+}
+.content.left {
+  grid-template-columns: 5fr 2fr;
 }
 </style>

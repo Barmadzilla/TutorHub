@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 section.gray {
-  background: var(--light-gray);
+  background: var(--bg-light-gray);
 }
 section.theme {
   background: var(--theme-block-bg-color);
@@ -45,11 +45,15 @@ section.footer{
   padding: var(--footer-padding);
   margin-top: var(--footer-padding);
 }
+
 .container {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
   min-width: 1024px;
   padding: 0 var(--container-padding);
+}
+section.theme.action{
+  padding: 4rem 0;
 }
 </style>

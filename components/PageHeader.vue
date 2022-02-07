@@ -13,7 +13,7 @@
       </div>
       <div class="title">
         <h1>{{ title }}</h1>
-        <button-main to="#form" title="Заполнить Анкету" />
+        <button-main v-if="action" :to="action.to" :title="action.name" />
       </div>
     </div>
   </content-section>
@@ -36,6 +36,10 @@ export default {
     },
     nav: {
       type: Array,
+      default: null
+    },
+    action: {
+      type: Object,
       default: null
     }
   }

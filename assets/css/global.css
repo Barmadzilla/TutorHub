@@ -17,11 +17,16 @@
 html {
   scroll-behavior: smooth;
 }
+strong{
+  font-weight: bold;
+  font-size: 1em;
+}
 p {
   font-size: 1.6em;
   margin-bottom: var(--space-between-p);
 }
-p:last-child {
+p:last-child,
+p:only-child {
   margin-bottom: 0;
 }
 li {
@@ -61,8 +66,22 @@ h5,
 h6 {
   color: var(--text);
 }
-.add-space{
+.add-space {
   padding-bottom: var(--section-padding);
+}
+button {
+  appearance: none;
+  outline: none;
+  background: var(--light-gray);
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.5em;
+  border: solid 0.2rem var(--theme-text-color);
+  border-radius: .5rem;
+  line-height: 1;
+  color: var(--theme-text-color);
+  cursor: pointer;
+  transition: all 150ms;
 }
 .btn {
   background: var(--main-blue);
@@ -76,10 +95,17 @@ h6 {
   line-height: 1;
   border: solid 0.2rem var(--main-blue);
   transition: all 150ms;
-  appearance: none;
-  outline: none;
 }
 .btn:hover {
   background: transparent;
   color: var(--main-blue);
+}
+
+a {
+  transition: all 150ms;
+}
+pre {
+  font-family: 'Courier', monospace;
+  font-size: 1.2rem;
+  color: gray;
 }

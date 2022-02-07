@@ -30,16 +30,19 @@ section{
     padding: 0;
 }
 .placeholder {
+  margin-top: var(--container-padding);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 300px;
-  height: 35vh;
-  max-height: 400px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* min-height: 300px; */
+  max-height: 50rem;
+  width: 100%;
   overflow: hidden;
 }
-img {
+.placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
   object-fit: contain;
-  height: 100%;
 }
 </style>
