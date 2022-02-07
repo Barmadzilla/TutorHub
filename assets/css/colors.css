@@ -5,11 +5,11 @@
   --main-pink: #EF5DA8;
   --main-third: #4671EB;
   --bg-first: #d4eafe;
-  --bg-first-transparent:rgb(212, 234, 254, 0.22);
+  --bg-first-transparent:rgb(212, 234, 254, 0.40);
   --bg-second: #fed4f2;
-  --bg-second-transparent: rgba(254, 212, 242, 0.22);
+  --bg-second-transparent: rgba(254, 212, 242, 0.35);
   --bg-third: #d4dffe;
-  --bg-third-transparent:rgb(212, 223, 254, 0.22);
+  --bg-third-transparent:rgb(212, 223, 254, 0.40);
   --light-gray: #fff6fc;
   --bg-light-gray: #F5F5F5;
   --color-placeholder: #828282;

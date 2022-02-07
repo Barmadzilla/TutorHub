@@ -9,8 +9,7 @@
     />
     <info-block :id="content[2].link" :data="content[2]" position="right" />
     <info-block :id="content[3].link" :data="content[3]" position="left" />
-    <road-map :id="content[4].link" :data="content[4]" />
-    <tutor-form />
+    <parent-form />
   </div>
 </template>
 
@@ -19,8 +18,7 @@ import PageHeader from '~/components/PageHeader.vue'
 import InfoBlock from '~/components/InfoBlock.vue'
 import InfoBlockImg from '~/components/InfoBlockImg.vue'
 import InfoBlockIcons from '~/components/InfoBlockIcons.vue'
-import RoadMap from '~/components/RoadMap.vue'
-import TutorForm from '~/components/Forms/TutorForm.vue'
+import ParentForm from '~/components/Forms/ParentForm.vue'
 
 export default {
   name: 'EducationPage',
@@ -29,8 +27,7 @@ export default {
     InfoBlock,
     InfoBlockImg,
     InfoBlockIcons,
-    RoadMap,
-    TutorForm
+    ParentForm
   },
   data () {
     return {
@@ -72,18 +69,6 @@ export default {
             'Наш инклюзивный центр проводит онлайн-встречи ресурсных родительских групп для родителей. Прочитать про них подробнее и записаться вы можете по ссылке: https://yom-yom.ru/resource_group',
             'Также мы готовы оказывать индивидуальную супервизорскую поддержку для вашего тьютора. Специалисты нашего центра будут консультировать его по сложным вопросам, возникающим в ходе сопровождения, оказывать методическую поддержку, помогать разрабатывать дополнительные материалы и в случае необходимости проводить наблюдения в учреждении, которое посещает ваш ребёнок. Стоимость индивидуальной супервизорской поддержки тьютора составляет 5000 рублей/месяц. Подать запрос на поддержку для тьютора от специалистов нашего центра вы можете , написав нам на почту: centr.yomyom@gmail.com',
             'Инклюзивный центр «Йом-йом» уже несколько лет проводит Уроки добра в общеобразовательных  школах и детских садах, которые посещают особые дети. Уроки добра - это цикл занятий, направленных на то, чтобы показать детям, что все мы разные, у каждого есть свои особенности и это абсолютно нормально. Подробнее узнать об уроках добра и договориться об их проведении вы можете, написав нам на почту: centr.yomyom@gmail.com (или сделать тут окошко, через которое можно будет сразу на почту написать?)'
-          ]
-        },
-        {
-          link: 'roadmap',
-          title: 'Что нужно, чтобы стать тьютором?',
-          content: [
-            'Зайти на портал ТьюторХаб',
-            'Заполнить анкету',
-            'Пройти наш курс в групповом или индивидуальном порядке',
-            'Познакомиться с ребенком, семьей, учреждением',
-            'Начать сопровождать ребенка в учреждении',
-            'Посещать группы супервизии для тьюторов'
           ]
         }
       ]

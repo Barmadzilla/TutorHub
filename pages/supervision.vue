@@ -1,6 +1,6 @@
 <template>
   <div :style="designColor">
-    <page-header :title="title" :nav="nav" :action="{ to:'#form', name: 'Записаться на лекцию' }" />
+    <page-header :title="title" :nav="nav" :action="{ to:'#form', name: 'Записаться на группу супервизии' }" />
     <info-block :data="content[0]" position="left" />
     <info-block-img :id="content[1].link" :data="content[1]" position="right" />
     <info-block :id="content[2].link" :data="content[2]" position="left" />

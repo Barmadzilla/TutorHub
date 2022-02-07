@@ -18,9 +18,9 @@ export default {
     return {
       menu: [
         { name: 'О нас', to: 'about' },
-        { name: 'Работа', to: 'work' },
         { name: 'Обучение', to: 'education' },
-        { name: 'Тьютору', to: 'supervision' }
+        { name: 'Тьютору', to: 'supervision' },
+        { name: 'Родителям', to: 'for-parents' }
         // { name: 'Контакты', to: 'contacts' }
       ]
     }
