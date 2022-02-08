@@ -17,10 +17,10 @@ export default {
   data () {
     return {
       menu: [
-        { name: 'О нас', to: 'about' },
-        { name: 'Обучение', to: 'education' },
-        { name: 'Тьютору', to: 'supervision' },
-        { name: 'Родителям', to: 'for-parents' }
+        // { name: 'О нас', to: 'about' },
+        { name: 'Родителям', to: 'for-parents' },
+        { name: 'Тьюторам', to: 'supervision' },
+        { name: 'Курсы подготовки', to: 'education' }
         // { name: 'Контакты', to: 'contacts' }
       ]
     }
