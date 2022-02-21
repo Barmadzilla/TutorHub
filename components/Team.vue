@@ -1,5 +1,8 @@
 <template>
   <content-section :color="'gray'">
+    <h2 v-if="title">
+      {{ title }}
+    </h2>
     <div class="scroll">
       <div class="team">
         <team-mate v-for="(teammate, i) in team" :key="i" :data="teammate" />
@@ -14,6 +17,12 @@ import TeamMate from './TeamMate.vue'
 export default {
   name: 'TeamBlock',
   components: { ContentSection, TeamMate },
+  props: {
+    title: {
+      type: String,
+      default: null
+    }
+  },
   data () {
     return {
       team: [
@@ -54,6 +63,9 @@ export default {
 </script>
 
 <style>
+h2{
+  padding-bottom: 5rem;
+}
 .scroll {
   overflow-x: auto;
   position: relative;
@@ -62,10 +74,12 @@ export default {
   /* scroll-padding-block: 50em; */
 }
 .team {
-  display: flex;
-  width: max-content;
-  grid-area: 3em;
-  align-items: flex-start;
+  display: grid;
+  justify-items: center;
+  /* width: max-content; */
+  /* grid-area: 3em; */
+  grid-gap: 3em;
+  grid-template-columns: repeat(3,1fr);
   scroll-padding-block: 50em;
   scroll-snap-type: both mandatory;
 }

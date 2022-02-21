@@ -34,10 +34,17 @@ export default {
   overflow: auto;
   padding-bottom: 1em;
 }
-.roadmap {
+/* .roadmap {
   padding-top: var(--section-padding);
   display: flex;
   gap: 3em;
   width: max-content;
+} */
+.roadmap {
+  padding-top: var(--section-padding);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4em 2em;
+  place-items: center;
 }
 </style>

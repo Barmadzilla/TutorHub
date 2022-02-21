@@ -51,6 +51,11 @@ h2 {
 h3 {
   font-size: 2em;
 }
+h4 {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+  color: var(--theme-text-color);
+}
 h1 {
   color: var(--main-blue);
   margin-bottom: 1em;

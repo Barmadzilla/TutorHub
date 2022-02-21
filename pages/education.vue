@@ -41,7 +41,7 @@ export default {
         '--theme-text-color': 'var(--main-pink)',
         '--theme-block-bg-color': 'var(--bg-second-transparent)'
       },
-      title: 'Хочу стать Тьютером',
+      title: 'Хочу стать Тьютором',
       content: [
         {
           title: 'Кто такой тьютор для особого ребенка?',
