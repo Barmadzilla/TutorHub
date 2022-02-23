@@ -105,7 +105,14 @@ button {
   background: transparent;
   color: var(--main-blue);
 }
-
+.btn:disabled{
+  opacity: .5;
+  cursor: not-allowed;
+}
+.btn:disabled:hover{
+  background: var(--main-blue);
+  color: white;
+}
 a {
   transition: all 150ms;
 }

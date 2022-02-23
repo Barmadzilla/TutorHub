@@ -9,7 +9,7 @@
     />
     <info-block :id="content[2].link" :data="content[2]" position="right" />
     <info-block :id="content[3].link" :data="content[3]" position="left" />
-    <parent-form />
+    <big-form :title="form.title" :description="form.description" :fields="form.fields" sheet="Parents" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import PageHeader from '~/components/PageHeader.vue'
 import InfoBlock from '~/components/InfoBlock.vue'
 import InfoBlockImg from '~/components/InfoBlockImg.vue'
 import InfoBlockIcons from '~/components/InfoBlockIcons.vue'
-import ParentForm from '~/components/Forms/ParentForm.vue'
+import BigForm from '~/components/Forms/BigForm.vue'
 
 export default {
   name: 'EducationPage',
@@ -27,7 +27,7 @@ export default {
     InfoBlock,
     InfoBlockImg,
     InfoBlockIcons,
-    ParentForm
+    BigForm
   },
   data () {
     return {
@@ -71,7 +71,109 @@ export default {
             'Инклюзивный центр «Йом-йом» уже несколько лет проводит Уроки добра в общеобразовательных  школах и детских садах, которые посещают особые дети. Уроки добра - это цикл занятий, направленных на то, чтобы показать детям, что все мы разные, у каждого есть свои особенности и это абсолютно нормально. Подробнее узнать об уроках добра и договориться об их проведении вы можете, написав нам на почту: centr.yomyom@gmail.com (или сделать тут окошко, через которое можно будет сразу на почту написать?)'
           ]
         }
-      ]
+      ],
+      form: {
+        title: 'Анкета',
+        description: 'Здравствуйте! Заполните, пожалуйста, анкету, которая поможет нам подобрать подходящего Вам тьютора',
+        fields: [
+          [
+            {
+              label: '',
+              placeholder: 'Имя и Фамилия ребенка',
+              type: 'text',
+              name: 'FullName',
+              value: '',
+              required: true
+            },
+            {
+              placeholder: 'Ваш телефон',
+              type: 'text',
+              name: 'phone',
+              value: '',
+              required: true
+            },
+            {
+              label: '',
+              placeholder: 'E-mail для связи',
+              type: 'email',
+              value: '',
+              name: 'email',
+              required: true
+            },
+            {
+              label: '',
+              placeholder: 'Возраст Ребенка',
+              type: 'text',
+              name: 'Age',
+              value: ''
+            },
+            {
+              label: '',
+              placeholder: 'Имена родителей',
+              type: 'text',
+              value: '',
+              name: 'parents'
+            }
+          ],
+          [
+            {
+              label: 'Коротко опишите ребёнка, его особенности и сильные стороны',
+              type: 'text',
+              value: '',
+              name: 'features'
+            },
+            {
+              label: 'В каком учреждении ребёнку понадобится помощь тьютора?',
+              type: 'text',
+              value: '',
+              name: 'workPlace'
+            },
+            {
+              label: 'Должно ли быть у тьютора профильное образования для трудоустройства у вас?',
+              type: 'radio',
+              value: '',
+              name: 'diploma',
+              chose: ['Да', 'Нет']
+            },
+            {
+              label: 'Сформированы ли у ребёнка навыки самообслуживания? Понадобится ли помощь с походами в туалет и тд?',
+              type: 'radio',
+              value: '',
+              name: 'selfService',
+              chose: ['Да', 'Нет']
+            },
+            {
+              label: 'Какая помощь со стороны тьютора потребуется ребёнку?',
+              type: 'text',
+              value: '',
+              name: 'helpKind'
+            },
+            {
+              label: 'Ожидаемая заработная плата:',
+              placeholder: 'Укажите сумму',
+              type: 'text',
+              value: '',
+              name: 'salary'
+            }
+          ],
+          [
+            {
+              label: 'Любые комментарии, вопросы:',
+              type: 'textarea',
+              value: '',
+              name: 'commentaries',
+              span: true
+            },
+            {
+              type: 'checkbox',
+              value: [],
+              name: 'personalData',
+              chose: ['Согласен на обработку данных'],
+              required: true
+            }
+          ]
+        ]
+      }
     }
   },
   computed: {

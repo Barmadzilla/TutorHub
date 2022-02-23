@@ -1,6 +1,10 @@
 <template>
   <div :style="designColor">
-    <page-header :title="title" :nav="nav" :action="{ to:'#form', name: 'Заполнить анкету' }" />
+    <page-header
+      :title="title"
+      :nav="nav"
+      :action="{ to: '#form', name: 'Заполнить анкету' }"
+    />
     <info-block-img :id="content[0].link" :data="content[0]" />
     <info-block-icons
       :id="content[1].link"
@@ -10,7 +14,7 @@
     <info-block :id="content[2].link" :data="content[2]" />
     <accordion-block :id="content[3]" :data="content[3]" />
     <road-map :id="content[4].link" :data="content[4]" />
-    <tutor-form />
+    <big-form :title="form.title" :description="form.description" :fields="form.fields" sheet="Tutors" />
   </div>
 </template>
 
@@ -21,7 +25,7 @@ import InfoBlockImg from '~/components/InfoBlockImg.vue'
 import InfoBlockIcons from '~/components/InfoBlockIcons.vue'
 import RoadMap from '~/components/RoadMap.vue'
 import AccordionBlock from '~/components/AccordionBlock.vue'
-import TutorForm from '~/components/Forms/TutorForm.vue'
+import BigForm from '~/components/Forms/BigForm.vue'
 
 export default {
   name: 'EducationPage',
@@ -32,7 +36,7 @@ export default {
     InfoBlockIcons,
     RoadMap,
     AccordionBlock,
-    TutorForm
+    BigForm
   },
   data () {
     return {
@@ -122,7 +126,139 @@ export default {
             'Посещать группы супервизии для тьюторов'
           ]
         }
-      ]
+      ],
+      form: {
+        title: 'Анкета',
+        description:
+          'Здравствуйте! Заполните, пожалуйста, анкету, которая поможет нам подобрать подходящую вам вакансию.',
+        fields: [
+          [
+            {
+              label: '',
+              placeholder: 'Имя Фамилия',
+              type: 'text',
+              name: 'FullName',
+              value: '',
+              required: true
+            },
+            {
+              placeholder: 'Ваш телефон',
+              type: 'text',
+              name: 'phone',
+              value: '',
+              required: true
+            },
+            {
+              label: '',
+              placeholder: 'E-mail для связи',
+              type: 'email',
+              value: '',
+              name: 'email',
+              required: true
+            },
+            {
+              label: '',
+              placeholder: 'Ваш возраст',
+              type: 'text',
+              name: 'Age',
+              value: ''
+            },
+            {
+              label: '',
+              placeholder: 'Какое у вас образование?',
+              type: 'text',
+              value: '',
+              name: 'education'
+            },
+            {
+              label: '',
+              placeholder: 'Подходящий график работы:',
+              type: 'text',
+              value: '',
+              name: 'schedule'
+            }
+          ],
+          [
+            {
+              label:
+                'Проходили ли вы дополнительное обучение, курсы повышения квалификации и тд? Если да, то какие:',
+              type: 'text',
+              value: '',
+              name: 'education'
+            },
+            {
+              label:
+                'Есть ли у вас предпочтения по районам города, в которых вы готовы работать?',
+              type: 'text',
+              value: '',
+              name: 'preferBlock'
+            },
+            {
+              label:
+                'Готовы ли вы, в случае отсутствия подходящих вакансий, рассмотреть другие районы?',
+              type: 'radio',
+              value: '',
+              name: 'alternateBlok',
+              chose: ['Да', 'Нет']
+            },
+            {
+              label:
+                'Есть ли у вас действующий сертификат о вакцинации от Covid-19?',
+              type: 'radio',
+              value: '',
+              name: 'covidCertificate',
+              chose: ['Да', 'Нет']
+            },
+            {
+              label:
+                'Готовы ли вы помогать ребёнку с самообслуживанием (помощь с походами в туалет, мытьём рук, одеванием и тд)?',
+              type: 'radio',
+              value: '',
+              name: 'selfService',
+              chose: ['Да', 'Нет']
+            },
+            {
+              label:
+                'Готовы ли вы работать с ребёнком с двигательными особенностями, помогать ему с перемещениями?',
+              type: 'radio',
+              value: '',
+              name: 'cantMove',
+              chose: ['Да', 'Нет']
+            },
+            {
+              label:
+                'Готовы ли вы на дополнительную занятость с ребёнком (отводить домой, репетиторство по школьным предметам и тд)?',
+              type: 'radio',
+              value: '',
+              name: 'addons',
+              chose: ['Да', 'Нет']
+            },
+            {
+              label: 'Ожидаемая заработная плата:',
+              placeholder: 'Укажите сумму',
+              type: 'text',
+              value: '',
+              name: 'salary'
+            }
+          ],
+          [
+            {
+              label: 'Любые комментарии, вопросы:',
+              type: 'textarea',
+              value: '',
+              name: 'commentaries',
+              span: true
+            },
+            {
+              type: 'checkbox',
+              value: [],
+              name: 'personalData',
+              chose: ['Согласен на обработку данных'],
+              required: true
+            }
+          ]
+        ]
+      }
     }
   },
   computed: {

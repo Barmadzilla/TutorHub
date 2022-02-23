@@ -126,8 +126,8 @@
         </div>
       </div>
       <!-- <pre>Валидация: {{ validate }}</pre> -->
-      <pre>Loading: {{ loading }}</pre>
-      <pre>submitted: {{ submitted }}</pre>
+      <!-- <pre>Loading: {{ loading }}</pre> -->
+      <!-- <pre>submitted: {{ submitted }}</pre> -->
       <!-- <pre>toFill: {{ toFill }}</pre> -->
     </form>
   </content-section>
@@ -136,137 +136,32 @@
 <script>
 import ContentSection from '../ContentSection.vue'
 export default {
-  name: 'TutorForm',
+  name: 'BigForm',
   components: { ContentSection },
+  props: {
+    fields: {
+      type: Array,
+      default: null
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    },
+    sheet: {
+      type: String,
+      default: null
+    }
+  },
   data () {
     return {
       step: 0,
       submitted: false,
       loading: false,
-      error: false,
-      title: 'Анкета',
-      description:
-        'Здравствуйте! Заполните, пожалуйста, анкету, которая поможет нам подобрать подходящую вам вакансию.',
-      fields: [
-        [
-          {
-            label: '',
-            placeholder: 'Имя Фамилия',
-            type: 'text',
-            name: 'FullName',
-            value: '',
-            required: true
-          },
-          {
-            placeholder: 'Ваш телефон',
-            type: 'text',
-            name: 'phone',
-            value: '',
-            required: true
-          },
-          {
-            label: '',
-            placeholder: 'E-mail для связи',
-            type: 'email',
-            value: '',
-            name: 'email',
-            required: true
-          },
-          {
-            label: '',
-            placeholder: 'Ваш возраст',
-            type: 'text',
-            name: 'Age',
-            value: ''
-          },
-          {
-            label: '',
-            placeholder: 'Какое у вас образование?',
-            type: 'text',
-            value: '',
-            name: 'education'
-          },
-          {
-            label: '',
-            placeholder: 'Подходящий график работы:',
-            type: 'text',
-            value: '',
-            name: 'schedule'
-          }
-        ],
-        [
-          {
-            label: 'Проходили ли вы дополнительное обучение, курсы повышения квалификации и тд? Если да, то какие:',
-            type: 'text',
-            value: '',
-            name: 'education'
-          },
-          {
-            label: 'Есть ли у вас предпочтения по районам города, в которых вы готовы работать?',
-            type: 'text',
-            value: '',
-            name: 'preferBlock'
-          },
-          {
-            label: 'Готовы ли вы, в случае отсутствия подходящих вакансий, рассмотреть другие районы?',
-            type: 'radio',
-            value: '',
-            name: 'alternateBlok',
-            chose: ['Да', 'Нет']
-          },
-          {
-            label: 'Есть ли у вас действующий сертификат о вакцинации от Covid-19?',
-            type: 'radio',
-            value: '',
-            name: 'covidCertificate',
-            chose: ['Да', 'Нет']
-          },
-          {
-            label: 'Готовы ли вы помогать ребёнку с самообслуживанием (помощь с походами в туалет, мытьём рук, одеванием и тд)?',
-            type: 'radio',
-            value: '',
-            name: 'selfService',
-            chose: ['Да', 'Нет']
-          },
-          {
-            label: 'Готовы ли вы работать с ребёнком с двигательными особенностями, помогать ему с перемещениями?',
-            type: 'radio',
-            value: '',
-            name: 'cantMove',
-            chose: ['Да', 'Нет']
-          },
-          {
-            label: 'Готовы ли вы на дополнительную занятость с ребёнком (отводить домой, репетиторство по школьным предметам и тд)?',
-            type: 'radio',
-            value: '',
-            name: 'addons',
-            chose: ['Да', 'Нет']
-          },
-          {
-            label: 'Ожидаемая заработная плата:',
-            placeholder: 'Укажите сумму',
-            type: 'text',
-            value: '',
-            name: 'salary'
-          }
-        ],
-        [
-          {
-            label: 'Любые комментарии, вопросы:',
-            type: 'textarea',
-            value: '',
-            name: 'commentaries',
-            span: true
-          },
-          {
-            type: 'checkbox',
-            value: [],
-            name: 'personalData',
-            chose: ['Согласен на обработку данных'],
-            required: true
-          }
-        ]
-      ]
+      error: false
     }
   },
   computed: {
@@ -295,10 +190,10 @@ export default {
       return type === 'text' || type === 'tel' || type === 'email'
     },
     async submitForm () {
+      this.loading = true
       const arr = this.allValues
       arr.pop()
-      const result = await this.$axios.post('https://api.tutorhub.ru', { sheet: 'Tutors', data: arr })
-      this.loading = true
+      const result = await this.$axios.post('https://api.tutorhub.ru', { sheet: this.sheet, data: arr })
       if (await result && result.data === 'OK') {
         this.submitted = true
         this.loading = false
