@@ -74,4 +74,8 @@ export default {
 .content.left {
   grid-template-columns: 5fr 2fr;
 }
+.content p {
+  text-align: justify;
+  text-justify: distribute
+}
 </style>

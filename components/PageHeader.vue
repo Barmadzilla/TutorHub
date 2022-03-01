@@ -13,7 +13,12 @@
       </div>
       <div class="title">
         <h1>{{ title }}</h1>
-        <button-main v-if="action" :to="action.to" :title="action.name" />
+        <div v-if="action.to">
+          <button-main :to="action.to" :title="action.name" />
+        </div>
+        <div v-if="action.href">
+          <a :href="action.href" :title="action.name" class="btn">{{ action.name }}</a>
+        </div>
       </div>
     </div>
   </content-section>
@@ -85,13 +90,13 @@ li {
   font-size: 1.6em;
   margin-top: 1rem;
 }
-li a{
+li a {
   font-size: inherit;
   text-decoration: none;
   color: inherit;
   transition: color 400ms;
 }
-li:hover a{
+li:hover a {
   color: var(--theme-text-color);
 }
 li:before {
@@ -105,7 +110,7 @@ li:before {
   margin-bottom: 0.4rem;
   transition: margin-right 150ms;
 }
-li:hover:before{
-  margin-right: .6rem;
+li:hover:before {
+  margin-right: 0.6rem;
 }
 </style>

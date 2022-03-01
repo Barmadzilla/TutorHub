@@ -4,10 +4,11 @@
     <info-block :data="content[0]" position="left" />
     <info-block-img :id="content[1].link" :data="content[1]" position="right" />
     <info-block :id="content[2].link" :data="content[2]" position="left" />
-    <call-to-action :to="{name:'Записаться на группу супервизии', link:'#'}">
-      Встречи группы супервизии проходят по вторникам и средам в <strong>с 19:00</strong> до <strong>20:30</strong> в онлайн-формате.
-    </call-to-action>
     <info-block :id="content[3].link" :data="content[3]" position="right" />
+    <call-to-action :to="{name:'Записаться на группу супервизии', link:'#'}">
+      Встречи группы супервизии проходят по вторникам и средам <strong>с 19:00</strong> до <strong>20:30</strong> в онлайн-формате.
+    </call-to-action>
+    <contact-form />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import PageHeader from '~/components/PageHeader.vue'
 import InfoBlock from '~/components/InfoBlock.vue'
 import InfoBlockImg from '~/components/InfoBlockImg.vue'
 import CallToAction from '~/components/CallToAction.vue'
+import ContactForm from '~/components/Forms/ContactForm.vue'
 
 export default {
   name: 'EducationPage',
@@ -23,7 +25,8 @@ export default {
     PageHeader,
     InfoBlock,
     InfoBlockImg,
-    CallToAction
+    CallToAction,
+    ContactForm
   },
   data () {
     return {
@@ -44,7 +47,7 @@ export default {
           link: 'why',
           content: [
             'Почему участвовать в супервизиях важно и полезно для специалиста? Потому что это - отличная возможность личностного роста и профессионального развития.',
-            'Супервизия - форма групповой работы для психологов, тьюторов, педагогов и других специалистов «помогающих» и социально значимых профессий.',
+            'Супервизия - форма групповой работы для психологов, тьюторов, педагогов и других специалистов помогающих и социально значимых профессий.',
             'На групповой супервизии участники получают психологическую поддержку и методические рекомендации. Вместе с ведущими обсуждают сложности сопровождения, делятся опытом, находят решения.'
           ]
         },

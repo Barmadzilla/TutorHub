@@ -51,4 +51,7 @@ img{
   align-items: center;
   max-width: 60vw;
 }
+li{
+  font-size: 1.5em;
+}
 </style>

@@ -21,6 +21,7 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  max-width: 40rem;
   gap: 2rem;
 }
 p {

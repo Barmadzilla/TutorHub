@@ -44,7 +44,7 @@ export default {
           name: 'Тьюторам',
           sub: [
             { name: 'Уже работаю тьютором', to: 'supervision' },
-            { name: 'Хочу стать Тьютором', to: 'education' }
+            { name: 'Хочу стать тьютором', to: 'education' }
           ]
         },
         { name: 'Курсы подготовки', to: 'course' }

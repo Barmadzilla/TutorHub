@@ -2,7 +2,10 @@
   <content-section color="theme" type="action">
     <div class="columns">
       <p><slot /></p>
-      <nuxt-link :to="to.link" class="btn">
+      <a v-if="to.external" :href="to.link" class="btn">
+        {{ to.name }}
+      </a>
+      <nuxt-link v-if="!to.external" :to="to.link" class="btn">
         {{ to.name }}
       </nuxt-link>
     </div>

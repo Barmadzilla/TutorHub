@@ -1,6 +1,8 @@
 <template>
   <content-section color="theme">
-    <h2>{{ data.title }}</h2>
+    <h2 v-if="data.title">
+      {{ data.title }}
+    </h2>
     <div class="accordion">
       <div class="buttons-sticky">
         <div class="buttons">

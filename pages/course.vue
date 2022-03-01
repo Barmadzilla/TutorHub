@@ -3,23 +3,24 @@
     <page-header
       :title="title"
       :nav="nav"
-      :action="{ to: '#form', name: 'Подать заявку на участие в курсе' }"
+      :action="{ href: 'https://forms.gle/riMGoNpvhfUbAn3D9', name: 'Подать заявку на участие в курсе' }"
     />
     <info-block-img :id="content[0].link" :data="content[0]" />
     <motivation-block :id="content[1].link" :data="content[1]" />
-    <call-to-action :to="{ name: 'Подать заявку', link: '#' }">
+    <call-to-action :to="{ name: 'Подать заявку', link: 'https://forms.gle/riMGoNpvhfUbAn3D9', external: true }">
       Подать заявку на участие в курсе для тьюторов
       <br>
-      <strong>"Слышу, вижу и понимаю особого ребёнка"</strong>
+      <strong>«Слышу, вижу и понимаю особого ребёнка»</strong>
     </call-to-action>
     <features-list :id="content[2].link" :data="content[2]" />
     <raised-hands :id="content[3].link" :data="content[3]" />
-    <team-vue title="Ведущие и кураторы" />
-    <call-to-action :to="{ name: 'Задать вопрос', link: '#' }">
+    <!-- <team-vue title="Ведущие и кураторы" /> -->
+    <call-to-action :to="{ name: 'Задать вопрос', link: '/contact' }">
       <h4>Остались вопросы?</h4>
       Воспользуйтесь формой обратной связи
     </call-to-action>
     <testimonials-block :data="content[4]" />
+    <contact-form />
   </div>
 </template>
 
@@ -28,10 +29,11 @@ import PageHeader from '~/components/PageHeader.vue'
 import InfoBlockImg from '~/components/InfoBlockImg.vue'
 import MotivationBlock from '~/components/MotivationBlock.vue'
 import CallToAction from '~/components/CallToAction.vue'
-import TeamVue from '~/components/Team.vue'
+// import TeamVue from '~/components/Team.vue'
 import FeaturesList from '~/components/FeaturesList.vue'
 import RaisedHands from '~/components/RaisedHands.vue'
 import TestimonialsBlock from '~/components/TestimonialsBlock.vue'
+import ContactForm from '~/components/Forms/ContactForm.vue'
 
 export default {
   name: 'EducationPage',
@@ -40,10 +42,11 @@ export default {
     InfoBlockImg,
     MotivationBlock,
     CallToAction,
-    TeamVue,
+    // TeamVue,
     FeaturesList,
     RaisedHands,
-    TestimonialsBlock
+    TestimonialsBlock,
+    ContactForm
   },
   data () {
     return {
@@ -63,7 +66,7 @@ export default {
           ]
         },
         {
-          title: 'Курс вам подходит, если вы:',
+          title: 'Для кого этот курс?',
           link: 'motivation',
           content: [
             {
@@ -90,10 +93,10 @@ export default {
           title: 'На курсе вы:',
           link: 'on-course-you',
           content: [
-            {
-              photo: 'feature_1.jpg',
-              description: 'Готовы стать участником нашей базы тьюторов и получать информацию о вакансиях'
-            },
+            // {
+            //   photo: 'feature_1.jpg',
+            //   description: 'Готовы стать участником нашей базы тьюторов и получать информацию о вакансиях'
+            // },
             {
               photo: 'feature_2.jpg',
               description: 'Познакомитесь с приёмами успешной работы с особыми детьми, как по отдельности, так и в смешанных группах.'

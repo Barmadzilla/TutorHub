@@ -3,7 +3,7 @@
     <page-header
       :title="title"
       :nav="nav"
-      :action="{ to: '#form', name: 'Заполнить анкету' }"
+      :action="{ to: '/tutor-form', name: 'Заполнить анкету' }"
     />
     <info-block-img :id="content[0].link" :data="content[0]" />
     <info-block-icons
@@ -11,32 +11,35 @@
       :data="content[1]"
       position="right"
     />
-    <info-block :id="content[2].link" :data="content[2]" />
-    <accordion-block :id="content[3]" :data="content[3]" />
+    <!-- <info-block :id="content[2].link" :data="content[2]" /> -->
+    <!-- <accordion-block :id="content[3]" :data="content[3]" /> -->
     <road-map :id="content[4].link" :data="content[4]" />
-    <big-form :title="form.title" :description="form.description" :fields="form.fields" sheet="Tutors" />
+    <!-- <big-form :title="form.title" :description="form.description" :fields="form.fields" sheet="Tutors" /> -->
+    <contact-form />
   </div>
 </template>
 
 <script>
 import PageHeader from '~/components/PageHeader.vue'
-import InfoBlock from '~/components/InfoBlock.vue'
+// import InfoBlock from '~/components/InfoBlock.vue'
 import InfoBlockImg from '~/components/InfoBlockImg.vue'
 import InfoBlockIcons from '~/components/InfoBlockIcons.vue'
 import RoadMap from '~/components/RoadMap.vue'
-import AccordionBlock from '~/components/AccordionBlock.vue'
-import BigForm from '~/components/Forms/BigForm.vue'
+// import AccordionBlock from '~/components/AccordionBlock.vue'
+// import BigForm from '~/components/Forms/BigForm.vue'
+import ContactForm from '~/components/Forms/ContactForm.vue'
 
 export default {
   name: 'EducationPage',
   components: {
     PageHeader,
-    InfoBlock,
+    // InfoBlock,
     InfoBlockImg,
     InfoBlockIcons,
     RoadMap,
-    AccordionBlock,
-    BigForm
+    // AccordionBlock,
+    // BigForm,
+    ContactForm
   },
   data () {
     return {
@@ -48,7 +51,7 @@ export default {
       title: 'Хочу стать Тьютором',
       content: [
         {
-          title: 'Кто такой тьютор для особого ребенка?',
+          title: 'Кто такой тьютор для особого ребёнка?',
           link: 'who',
           content: [
             'Тьютор для ребёнка с ОВЗ - новая, но уже востребованная профессия среди помогающих специальностей в России. Тьютор помогает особому ребёнку включиться в среду школы или детского сада, поддерживает его, объясняет ему правила поведения и общения, следит чтобы ребенок осваивал учебную программу и выполнял задания. От специалиста требуются эмоциональная поддержка, терпение, внимание и желание помогать.'
@@ -58,7 +61,7 @@ export default {
           title: 'Как связаны тьютор и инклюзия?',
           link: 'connection',
           content: [
-            'Тьюторское сопровождение детей с особенностями развития - важное звено инклюзивного образования. Благодаря работе тьютора особый ребенок получает образование вместе со сверстниками, может завести друзей и становится частью социума.'
+            'Тьюторское сопровождение детей с особенностями развития - важное звено инклюзивного образования. Благодаря работе тьютора особый ребёнок получает образование вместе со сверстниками, может завести друзей и становится частью социума.'
           ]
         },
         {
@@ -121,8 +124,8 @@ export default {
             // 'Зайти на портал ТьюторХаб',
             'Заполнить анкету',
             'Пройти наш курс в групповом или индивидуальном порядке',
-            'Познакомиться с ребенком, семьей, учреждением',
-            'Начать сопровождать ребенка в учреждении',
+            'Познакомиться с ребёнком, семьёй, учреждением',
+            'Начать сопровождать ребёнка в учреждении',
             'Посещать группы супервизии для тьюторов'
           ]
         }
@@ -161,37 +164,44 @@ export default {
               placeholder: 'Ваш возраст',
               type: 'text',
               name: 'Age',
-              value: ''
+              value: '',
+              required: true
             },
             {
               label: '',
               placeholder: 'Какое у вас образование?',
               type: 'text',
               value: '',
-              name: 'education'
+              name: 'education',
+              required: true
             },
             {
               label: '',
               placeholder: 'Подходящий график работы:',
               type: 'text',
               value: '',
-              name: 'schedule'
+              name: 'schedule',
+              required: true
             }
           ],
           [
             {
               label:
                 'Проходили ли вы дополнительное обучение, курсы повышения квалификации и тд? Если да, то какие:',
+              message: 'Проходили ли вы дополнительное обучение, курсы повышения квалификации и тд?',
               type: 'text',
               value: '',
-              name: 'education'
+              name: 'education',
+              required: true
             },
             {
               label:
                 'Есть ли у вас предпочтения по районам города, в которых вы готовы работать?',
+              message: 'Есть ли у вас предпочтения по районам города, в которых вы готовы работать?',
               type: 'text',
               value: '',
-              name: 'preferBlock'
+              name: 'preferBlock',
+              required: true
             },
             {
               label:
@@ -199,7 +209,8 @@ export default {
               type: 'radio',
               value: '',
               name: 'alternateBlok',
-              chose: ['Да', 'Нет']
+              chose: ['Да', 'Нет'],
+              required: true
             },
             {
               label:
@@ -207,7 +218,8 @@ export default {
               type: 'radio',
               value: '',
               name: 'covidCertificate',
-              chose: ['Да', 'Нет']
+              chose: ['Да', 'Нет'],
+              required: true
             },
             {
               label:
@@ -215,7 +227,8 @@ export default {
               type: 'radio',
               value: '',
               name: 'selfService',
-              chose: ['Да', 'Нет']
+              chose: ['Да', 'Нет'],
+              required: true
             },
             {
               label:
@@ -223,7 +236,8 @@ export default {
               type: 'radio',
               value: '',
               name: 'cantMove',
-              chose: ['Да', 'Нет']
+              chose: ['Да', 'Нет'],
+              required: true
             },
             {
               label:
@@ -231,14 +245,16 @@ export default {
               type: 'radio',
               value: '',
               name: 'addons',
-              chose: ['Да', 'Нет']
+              chose: ['Да', 'Нет'],
+              required: true
             },
             {
               label: 'Ожидаемая заработная плата:',
               placeholder: 'Укажите сумму',
               type: 'text',
               value: '',
-              name: 'salary'
+              name: 'salary',
+              required: true
             }
           ],
           [
@@ -251,6 +267,7 @@ export default {
             },
             {
               type: 'checkbox',
+              message: 'Согласен на обработку данных',
               value: [],
               name: 'personalData',
               chose: ['Согласен на обработку данных'],

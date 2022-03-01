@@ -10,9 +10,7 @@
       <div v-if="position === 'right'" />
       <div class="first">
         <h2>{{ data.title }}</h2>
-        <p v-for="(p, i) in data.content" :key="i">
-          {{ p }}
-        </p>
+        <p v-for="(p, i) in data.content" :key="i" v-html="p" />
       </div>
       <div v-if="position === 'left'" />
     </div>
@@ -37,7 +35,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .content {
   display: grid;
   grid-template-columns: 1fr;
@@ -47,5 +45,9 @@ export default {
 }
 .content.left {
   grid-template-columns: 5fr 2fr;
+}
+.content p {
+  text-align: justify;
+  text-justify: distribute
 }
 </style>

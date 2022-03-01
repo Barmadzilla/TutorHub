@@ -79,11 +79,19 @@
             </div>
           </div>
           <div v-if="step === fields.length - 1 && toFill.length">
+            <div class="agreement">
+              <p v-if="sheet === 'Tutors'">
+                <a href="https://docs.google.com/document/d/10VCHGqliUekvqsFBy0aeONgOrITuQ_Sg/edit?usp=sharing&ouid=114471045826151598296&rtpof=true&sd=true" target="_blank">Согласие на обработку персональных данных для участников программы в сфере инклюзии «Портал «Тьютор-Хаб»</a>
+              </p>
+              <p v-if="sheet === 'Parents'">
+                <a href="https://docs.google.com/document/d/1wbS6RMXr1F_9_jjpI65B9clTaXtITl_9/edit?usp=sharing&ouid=114471045826151598296&rtpof=true&sd=true" target="_blank">Согласие на обработку персональных данных для участников программы в сфере инклюзии «Портал «Тьютор-Хаб»</a>
+              </p>
+            </div>
             <div class="toFill">
               <h4>Перечисленные ниже поля обязательны для заполнения</h4>
               <ul>
                 <li v-for="item, i in toFill" :key="i">
-                  {{ item.chose ? item.chose[0] : item.placeholder }}
+                  {{ toFillMessage(item) }}
                 </li>
               </ul>
             </div>
@@ -179,6 +187,19 @@ export default {
     }
   },
   methods: {
+    toFillMessage (item) {
+      if (item.chose) {
+        return item?.message
+          ? item.message
+          : item?.placeholder
+            ? item.placeholder
+            : item.label
+      } else {
+        return item?.message
+          ? item.message
+          : item?.placeholder
+      }
+    },
     fieldValueIs (element) {
       if (typeof element.value === 'object') {
         return element.value[0]
@@ -192,8 +213,12 @@ export default {
     async submitForm () {
       this.loading = true
       const arr = this.allValues
+      const contact = {
+        name: this.fields.flat().find(item => item.name === 'FullName').value,
+        email: this.fields.flat().find(item => item.name === 'email').value
+      }
       arr.pop()
-      const result = await this.$axios.post('https://api.tutorhub.ru', { sheet: this.sheet, data: arr })
+      const result = await this.$axios.post('https://api.tutorhub.ru', { sheet: this.sheet, data: arr, contact })
       if (await result && result.data === 'OK') {
         this.submitted = true
         this.loading = false
@@ -385,5 +410,11 @@ ul{
 }
 .toFill li:last-child{
   margin: 0;
+}
+.agreement{
+  margin-bottom: 2rem;
+}
+.agreement p{
+  font-size: 1.3em;
 }
 </style>

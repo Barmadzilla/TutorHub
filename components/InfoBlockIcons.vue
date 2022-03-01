@@ -49,28 +49,28 @@ export default {
 }
 </script>
 <style scoped>
-.icons{
+.icons {
   display: flex;
   align-items: center;
   position: relative;
   justify-content: center;
   padding-top: var(--section-padding);
 }
-.connect{
+.connect {
   align-self: flex-start;
   margin: 1.5em -1em;
-  height:25%;
+  height: 25%;
   /* --diff: 4em;
   margin-bottom: var(--diff); */
   z-index: 0;
   /* object-fit: fill; */
   flex-grow: 3;
 }
-.icons .placeholder{
+.icons .placeholder {
   z-index: 1;
   flex-grow: 1;
 }
-.connect.up{
+.connect.up {
   transform: rotate(180deg);
   align-self: flex-end;
   /* margin-top: var(--diff);
@@ -85,5 +85,9 @@ export default {
 }
 .content.left {
   grid-template-columns: 5fr 2fr;
+}
+.content p {
+  text-align: justify;
+  text-justify: distribute
 }
 </style>

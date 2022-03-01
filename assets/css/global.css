@@ -21,6 +21,14 @@ strong{
   font-weight: bold;
   font-size: 1em;
 }
+li{
+  font-size: 1em;
+  margin-bottom: 1rem;
+}
+a{
+  font-size: 1em;
+  color: var(--theme-text-color);
+}
 p {
   font-size: 1.6em;
   margin-bottom: var(--space-between-p);
@@ -28,9 +36,6 @@ p {
 p:last-child,
 p:only-child {
   margin-bottom: 0;
-}
-li {
-  font-size: 1.5em;
 }
 ul {
   padding-left: 2.3em;
