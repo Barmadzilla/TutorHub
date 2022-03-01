@@ -38,4 +38,12 @@ p{
 a{
   white-space: nowrap;
 }
+@media (max-width: 750px){
+  .columns {
+    flex-direction: column;
+    text-align: center;
+    gap: 3em;
+    justify-items: center;
+  }
+}
 </style>

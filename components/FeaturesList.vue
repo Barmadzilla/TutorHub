@@ -39,4 +39,9 @@ h2 {
   place-items: center;
   grid-gap: 5rem;
 }
+@media (max-width: 750px) {
+  .content{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 </style>

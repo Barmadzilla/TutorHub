@@ -47,4 +47,14 @@ export default {
   grid-gap: 4em 2em;
   place-items: center;
 }
+@media (max-width: 1024px) {
+  .roadmap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .roadmap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 </style>

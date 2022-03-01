@@ -113,4 +113,19 @@ li:before {
 li:hover:before {
   margin-right: 0.6rem;
 }
+@media (max-width: 750px){
+  .page.nav {
+  --m-fix: 2.4em;
+  grid-template-columns: 1fr;
+  }
+  .page.nav ul{
+    margin: 0 auto;
+  }
+  .title{
+    flex-direction: column;
+    gap: 3em;
+    padding: 3em;
+    text-align: center;
+  }
+}
 </style>

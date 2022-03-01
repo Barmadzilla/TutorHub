@@ -40,4 +40,9 @@ export default {
 h2 {
   padding: 0 var(--padding) 3rem;
 }
+@media (max-width: 750px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 </style>

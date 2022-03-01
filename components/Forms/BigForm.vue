@@ -417,4 +417,20 @@ ul{
 .agreement p{
   font-size: 1.3em;
 }
+@media (max-width: 480px) {
+  .page {
+    grid-template-columns: repeat(1, 1fr);
+    box-sizing: border-box;
+    position: relative;
+    border: none;
+  }
+  form {
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+  .page-numbers{
+    gap: 6em;
+  }
+}
 </style>

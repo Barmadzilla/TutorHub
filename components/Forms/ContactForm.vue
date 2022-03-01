@@ -406,4 +406,17 @@ ul{
 .open:hover {
   opacity: 1;
 }
+@media (max-width: 750px){
+  form {
+    max-width: 70rem;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+  }
+}
 </style>

@@ -69,6 +69,7 @@ h1 {
 h2 {
   color: var(--theme-text-color);
   margin-bottom: 1em;
+  padding-bottom: 2rem !important;
 }
 h3,
 h4,
@@ -125,4 +126,34 @@ pre {
   font-family: 'Courier', monospace;
   font-size: 1.2rem;
   color: gray;
+}
+@media (max-width:1024px) {
+  :root{
+    /* --container-padding: 3em; */
+    --section-padding: 4em;
+  }
+  h2 {
+    padding-bottom: 1rem !important;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  * {
+    font-size: 8px;
+  }
+}
+@media (max-width:480px) {
+  :root{
+    --container-padding: 3em;
+  }
+}
+@media (max-width:380px) {
+  * {
+    font-size: 7px;
+  }
+}
+@media (max-width:320px) {
+  * {
+    font-size: 6px;
+  }
 }

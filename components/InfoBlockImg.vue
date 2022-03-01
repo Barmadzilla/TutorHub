@@ -43,12 +43,11 @@ export default {
       test: '--bg-second'
     }
   }
-
 }
 </script>
 
 <style scoped>
-.content{
+.content {
   display: grid;
   grid-template-columns: 4fr 2fr;
   grid-gap: 5em;
@@ -56,16 +55,16 @@ export default {
 .info {
   place-self: center;
 }
-.images{
+.images {
   position: relative;
   padding: 2em 4em;
   display: flex;
   flex-direction: column;
 }
-.icon{
+.icon {
   margin: -1.5em 0;
 }
-.icon:nth-child(even){
+.icon:nth-child(even) {
   align-self: flex-end;
 }
 .content.right {
@@ -76,6 +75,24 @@ export default {
 }
 .content p {
   text-align: justify;
-  text-justify: distribute
+  text-justify: distribute;
+}
+@media (max-width: 1024px) {
+  .images {
+    padding: 2em 3em;
+  }
+}
+@media (max-width: 750px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-gap: 5em;
+  }
+  .content.right,
+  .content.left {
+    grid-template-columns: 1fr;
+  }
+  .images {
+    padding: 2em 10vw;
+  }
 }
 </style>

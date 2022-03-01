@@ -167,10 +167,21 @@ h1 {
   text-align: center;
   font-size: 1.7em;
   font-weight: 200;
+}
+.split p, p {
   text-align: justify;
-  text-justify: distribute
+  text-justify: distribute;
 }
 li{
   font-size: 1.5em;
+}
+@media (max-width: 750px){
+  .split{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 3rem;
+  }
 }
 </style>

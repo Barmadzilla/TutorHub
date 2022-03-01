@@ -1,6 +1,6 @@
 <template>
   <content-section>
-    <div class="container">
+    <div class="content">
       <img :src="require('~/assets/images/raisedHands.jpg')" alt="Hands">
       <div class="hands">
         <h2>
@@ -30,7 +30,7 @@ export default {
 }
 </script>
 <style scoped>
-h2{
+h2 {
   padding-bottom: 0;
 }
 .hands {
@@ -41,17 +41,32 @@ h2{
   z-index: 2;
   background: white;
 }
-img{
+img {
   z-index: 1;
 }
-.container{
+.content {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   max-width: 60vw;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
-li{
+li {
   font-size: 1.5em;
+}
+@media (max-width: 1024px) {
+  img{width: 60vw;}
+}
+@media (max-width: 480px) {
+  img{width: 80vw;}
+  .content{
+    width: 90%;
+    max-width: unset;
+  }
+  .hands {
+    margin-top: -3rem;
+  }
 }
 </style>

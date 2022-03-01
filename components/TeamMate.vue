@@ -61,4 +61,16 @@ img {
 .info {
   text-align: center;
 }
+@media (max-width: 750px){
+  .team-mate {
+  width: 60vw;
+  }
+  .placeholder {
+    font-size: 9px;
+  }
+
+  .team-mate {
+    grid-gap: 5rem;
+  }
+}
 </style>

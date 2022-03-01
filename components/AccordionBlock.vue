@@ -120,4 +120,9 @@ img {
   object-fit: cover;
   width: 100%;
 }
+@media (max-width: 750px){
+  .accordion {
+    grid-template-columns: 1fr;
+}
+}
 </style>

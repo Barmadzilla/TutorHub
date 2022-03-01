@@ -115,4 +115,25 @@ nav {
   opacity: 0;
   transform: translateY(-1em);
 }
+@media (max-width: 750px){
+  nav {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .menu{
+    margin-top: 3em;
+    font-size: 2rem;
+    gap: 1em;
+  }
+  .menu .item{
+    font-size: 1.45em;
+    background: var(--theme-color);
+    padding: 1.6rem 1.3rem;
+    border-radius: .7rem;
+  }
+  .item.active-link{
+    color: white;
+    background: var(--main-blue);
+  }
+}
 </style>

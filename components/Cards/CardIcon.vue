@@ -33,4 +33,12 @@ img{
   max-height: 7.5em;
   max-width: 7.5em;
 }
+@media (max-width: 750px) {
+  .placeholder{
+    font-size: 11px;
+  }
+  img{
+    font-size: 10px;
+  }
+}
 </style>

@@ -90,4 +90,21 @@ export default {
   text-align: justify;
   text-justify: distribute
 }
+@media (max-width: 900px) {
+  .content.right,
+  .content.left {
+  grid-template-columns: 1fr;
+}
+
+}
+@media (max-width: 480px) {
+  .icons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+  }
+  .connect {
+    display: none;
+  }
+}
 </style>

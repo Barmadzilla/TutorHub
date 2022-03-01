@@ -31,4 +31,10 @@ img {
   width: 10rem;
   height: 10rem;
 }
+@media (max-width: 750px) {
+  img{
+    width: 20rem;
+   height: 20rem;
+  }
+}
 </style>

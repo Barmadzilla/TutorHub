@@ -83,4 +83,9 @@ h2{
   scroll-padding-block: 50em;
   scroll-snap-type: both mandatory;
 }
+@media (max-width: 750px){
+  .team {
+    grid-template-columns: repeat(1,1fr);
+  }
+}
 </style>

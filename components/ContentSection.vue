@@ -56,4 +56,14 @@ section.footer{
 section.theme.action{
   padding: 4rem 0;
 }
+@media (max-width:1024px) {
+  .container {
+  min-width: 750px;
+}
+}
+@media (max-width:480px) {
+  .container {
+    min-width: unset;
+  }
+}
 </style>

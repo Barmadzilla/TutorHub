@@ -66,4 +66,9 @@ export default {
   text-align: center;
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .card  {
+   width: 80%;
+  }
+}
 </style>

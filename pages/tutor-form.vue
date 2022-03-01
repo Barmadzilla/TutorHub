@@ -230,4 +230,11 @@ export default {
 .open:hover {
   opacity: 1;
 }
+@media (max-width: 750px) {
+  .container{
+    box-sizing: border-box;
+    width: 100%;
+    height: unset;
+  }
+}
 </style>

@@ -52,4 +52,23 @@ p {
   grid-gap: 5em;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  img {
+    height: 4rem;
+  }
+  p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 750px){
+  .content {
+     grid-template-columns: 1fr;
+  }
+  .sponsors{
+    justify-content: space-between;
+  }
+  img {
+    height: 4.5rem;
+  }
+}
 </style>
